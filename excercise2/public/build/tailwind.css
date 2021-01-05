@@ -31836,10 +31836,17 @@ video {
           animation: bounce 1s infinite;
 }
 
-/* .items:hover h2 {
-    @apply transition-all;
-    @apply text-primary;
-} */
+.items:hover h2 {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(255, 253, 253, var(--tw-text-opacity));
+}
+
+.items:hover {
+  background-color: #988787;
+}
 
 .hero-image {
   transform: scaleX(-1);
@@ -31849,17 +31856,40 @@ video {
   -o-transform: scaleX(-1);
 }
 
+.accessories {
+    padding-right: 3.6rem;
+    padding-left: 3.45rem;
+}
+
 .hero-image img {
   height: 40rem;
 }
 
-.book {
-  padding-left: 2.45rem;
-  padding-right: 2.9rem;
-}
-
 .border {
   border: 1px solid #988787;
+}
+
+button:after{
+  position: absolute;
+  top: 11px;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  right:-13px;
+  border: 12px solid transparent;
+  border-bottom-color: #988787;
+  border-right-color: #988787;
+  content: "";
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  display: none;
+}
+
+.buttons :nth-child(2) {
+  padding-left: 1.43rem;
 }
 
 @media (min-width: 640px){

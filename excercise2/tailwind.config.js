@@ -11,11 +11,13 @@ module.exports = {
         'primary': '#FFFDFD',
         'secondary': '#988787',
         'danger': '#e3342f',
+        
        }),
        colors: {
         'primary': '#FFFDFD',
          'secondary': '#988787',
-         'tertiary': '#E5DFDF'
+         'tertiary': '#BDB2B2',
+         
        },
        fontFamily: {
         body: [ 'Montserrat' ]
@@ -34,6 +36,11 @@ module.exports = {
          '6xl': '4rem',
         '7xl': '5rem',
        },
+       spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '99': '40rem',
+      },
        gradientColorStops: theme => ({
         ...theme('colors'),
         'square-left': 'rgba(255,255,255, 1)',
@@ -44,7 +51,12 @@ module.exports = {
     
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
-  plugins: [],
+  plugins: [
+    require ('tailwind-bootstrap-grid')({
+      gridGutterWidth: "32px",
+    }),
+  ],
 }
