@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="stylesheet" href="/build/tailwind.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+
+
+  <link rel="stylesheet" href="dist/main.css">
   <title>Welcome to Tailwind!</title>
 </head>
-<body class="antialiased font-body">
+<body class="antialiased text-black-100" >
 
     <div class="hero-section relative overflow-hidden">
       
@@ -61,7 +62,7 @@
         <a href="#">
           <div class="book items border-solid border-secondary border shadow-md flex justify-center py-20 bg-gradient-to-r from-square-left to-square-right hover:text-primary transition-all bg-primary opacity-90 items-center"> 
             <img src="images/calendar-fig.png" class="h-20 object-cover bg-no-repeat " alt="">
-            <h2 class="ml-6 text-secondary uppercase text-4xl font-extrabold">Rezervoni</h2>
+            <h2 class="ml-6 text-secondary  uppercase text-4xl font-extrabold">Rezervoni</h2>
           </div>
         </a>
       
@@ -79,15 +80,51 @@
     </div>
   </div>
 
-  <main class="filter max-w-screen-xl mx-auto bg-tertiary p-20">
+  <main class="filter max-w-screen-xl mx-auto bg-tertiary p-20 flex flex-row">
 
     <div class="buttons">
-      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pr-9 pl-6 mb-1 block hover:bg-secondary hover:text-white">Speciale</button>
-      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pr-5  mb-1 block hover:bg-secondary hover:text-white">Bestsellers</button>
-      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pr-8 pl-6 block hover:bg-secondary hover:text-white">Të fundit</button>
+      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pl-5 pr-7 mb-1 block hover:bg-secondary hover:text-white focus:outline-none">Specialet</button>
+      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pl-5 pr-4 mb-1 block hover:bg-secondary hover:text-white focus:outline-none">Bestsellers</button>
+      <button class="border relative  bg-white text-secondary text-sm font-medium py-3 pl-5 pr-7 block hover:bg-secondary hover:text-white hover: focus:outline-none">Të fundit</button>
     </div>
+    
+    <div class="relative">
+      <div class="my-slider">
+        <div>
+          <img src="images/screenshot-remove-bg3.png" class="w-2/4 mx-auto">
+        </div>
+        <div>
+          <img src="images/screenshot-remove-bg.png" class="w-2/4 mx-auto" alt="">
+        </div>
+        <div>
+          <img src="images/screenshot-remove-bg2.png" class="w-2/4 mx-auto">
+        </div>  
+      </div>
+      
+      <button id="sliderNext">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <svg version="1.1" id="Layer_1" class="absolute right-24 top-40 h-8 text-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 511.949 511.949" style="enable-background:new 0 0 511.949 511.949;" xml:space="preserve">
+        <g><g>
+        <path d="M386.235,248.308L140.902,2.975c-4.267-4.053-10.987-3.947-15.04,0.213c-3.947,4.16-3.947,10.667,0,14.827l237.76,237.76
+          l-237.76,237.867c-4.267,4.053-4.373,10.88-0.213,15.04c4.053,4.267,10.88,4.373,15.04,0.213c0.107-0.107,0.213-0.213,0.213-0.213
+          l245.333-245.333C390.395,259.188,390.395,252.468,386.235,248.308z"/>
+        </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+      </button>
 
-</main>
+      <button id="sliderPrev">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <svg version="1.1" id="Layer_1" class="absolute left-24 top-40 h-8 text-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 511.641 511.641" style="enable-background:new 0 0 511.641 511.641;" xml:space="preserve">
+        <g><g>
+          <path d="M148.32,255.76L386.08,18c4.053-4.267,3.947-10.987-0.213-15.04c-4.16-3.947-10.667-3.947-14.827,0L125.707,248.293
+              c-4.16,4.16-4.16,10.88,0,15.04L371.04,508.667c4.267,4.053,10.987,3.947,15.04-0.213c3.947-4.16,3.947-10.667,0-14.827
+              L148.32,255.76z"/>
+          </g></g><g></g><g></g><g></g><g></g><g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+      </button>
+    </div>
+    
+  </main>
 
   <div class="container-main max-w-screen-xl mx-auto mt-10 flex justify-between">
    
@@ -105,17 +142,19 @@
   </div>
 
   <footer class="bg-secondary padding-20 mt-32">
-    <div class="max-w-screen-xl mx-auto py-12 flex flex-row justify-items-stretch">
-      <div class="informata text-primary w-1/3">
+    <div class="max-w-screen-xl mx-auto py-12 flex justify-between">
+      <div class="informata text-primary w-1/3 flex flex-col justify-between">
         <p class="text-xl font-semibold">Informata</p>
         <p>Cool Vision është një kompani që ekziston
-          dhe operon në fushën e optikës që nga viti 2001</p>
+          dhe vepron në fushën e optikës që nga viti 2001</p>
+          <p class="text-xs">© All rights reserved.<br>
+            Cool Vision Company</p>
       </div>
-      <div class="contact-info w-1/3 text-primary justify-items-center">
+      <div class="contact-info text-primary justify-items-center">
         <div class="telephone flex ml-auto">
-          <a href="#">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg id="Layer_1" data-name="Layer 1" class="fill-current text-primary w-6 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs></defs><title>a</title><path class="cls-1" d="M106.58248,18.67715A62.18831,62.18831,0,0,0,1.93547,60.03859a61.70661,61.70661,0,0,0,16.742,46.54357,62.43431,62.43431,0,0,0,45.323,19.60672,3.336,3.336,0,0,0,0-6.672A55.51807,55.51807,0,0,1,60.45157,8.59416a55.52222,55.52222,0,0,1,59.06559,55.406,54.92693,54.92693,0,0,1-6.01939,25.17219,11.9927,11.9927,0,0,1-15.77551,5.10177l-1.769-.83767c1.00287-1.00816,1.93339-1.9714,2.61278-2.7002a2.1727,2.1727,0,0,0-.30922-3.23231L81.66209,76.84846a2.47073,2.47073,0,0,0-3.51561.59958c-1.3311,1.96515-4.36767,6.26821-4.36767,6.26821s-7.10343,3.825-19.67079-8.74253c-.19018-.19018-.34262-.36718-.52533-.55492-.18773-.18285-.36474-.33515-.55492-.52533-12.5675-12.5675-8.74266-19.67079-8.74266-19.67079S48.58831,51.186,50.55346,49.855a2.47084,2.47084,0,0,0,.59944-3.51574L40.49762,29.74468a2.17273,2.17273,0,0,0-3.23231-.30936c-2.46794,2.30071-7.5617,7.373-8.341,9.00017A17.31791,17.31791,0,0,0,28.20378,51.24,73.99183,73.99183,0,0,0,46.1976,80.45027c.23076.23076.46478.4318.69623.65727.22547.23144.42664.4656.65727.69636A73.99538,73.99538,0,0,0,76.7615,99.79772a17.31863,17.31863,0,0,0,12.8045-.72066,7.3097,7.3097,0,0,0,1.10848-.7588l4.19174,1.985a18.7027,18.7027,0,0,0,24.576-8.10114,61.5348,61.5348,0,0,0,6.747-28.202A62.43431,62.43431,0,0,0,106.58248,18.67715Z"/></svg></a>
-          <a href="tel:+38975302050">[389] 75 30 20 50</a>
+          <a href="#" class="">
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg id="Layer_1" data-name="Layer 1" class="fill-current text-primary hover:text-tertiary w-6 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs></defs><title>a</title><path class="cls-1" d="M106.58248,18.67715A62.18831,62.18831,0,0,0,1.93547,60.03859a61.70661,61.70661,0,0,0,16.742,46.54357,62.43431,62.43431,0,0,0,45.323,19.60672,3.336,3.336,0,0,0,0-6.672A55.51807,55.51807,0,0,1,60.45157,8.59416a55.52222,55.52222,0,0,1,59.06559,55.406,54.92693,54.92693,0,0,1-6.01939,25.17219,11.9927,11.9927,0,0,1-15.77551,5.10177l-1.769-.83767c1.00287-1.00816,1.93339-1.9714,2.61278-2.7002a2.1727,2.1727,0,0,0-.30922-3.23231L81.66209,76.84846a2.47073,2.47073,0,0,0-3.51561.59958c-1.3311,1.96515-4.36767,6.26821-4.36767,6.26821s-7.10343,3.825-19.67079-8.74253c-.19018-.19018-.34262-.36718-.52533-.55492-.18773-.18285-.36474-.33515-.55492-.52533-12.5675-12.5675-8.74266-19.67079-8.74266-19.67079S48.58831,51.186,50.55346,49.855a2.47084,2.47084,0,0,0,.59944-3.51574L40.49762,29.74468a2.17273,2.17273,0,0,0-3.23231-.30936c-2.46794,2.30071-7.5617,7.373-8.341,9.00017A17.31791,17.31791,0,0,0,28.20378,51.24,73.99183,73.99183,0,0,0,46.1976,80.45027c.23076.23076.46478.4318.69623.65727.22547.23144.42664.4656.65727.69636A73.99538,73.99538,0,0,0,76.7615,99.79772a17.31863,17.31863,0,0,0,12.8045-.72066,7.3097,7.3097,0,0,0,1.10848-.7588l4.19174,1.985a18.7027,18.7027,0,0,0,24.576-8.10114,61.5348,61.5348,0,0,0,6.747-28.202A62.43431,62.43431,0,0,0,106.58248,18.67715Z"/></svg></a>
+          <a href="tel:+38975302050" class="hover:text-tertiary">[389] 75 30 20 50</a>
       </div>
 
       <div class="clock flex flex-row items-end">
@@ -161,16 +200,16 @@
       </div>
     </div>
 
-      <div class="social-media w-1/3 text-primary">
+      <div class="social-media  text-primary">
         
         <p class="text-xl font-semibold">Social Media</p>
         <div class="social-insta flex flex-row mt-6">
-        <a href="https://www.instagram.com/optikacoolvision/"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 mr-4 fill-current"><title>Instagram icon</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+        <a href="https://www.instagram.com/optikacoolvision/"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 mr-4 fill-current hover:text-tertiary"><title>Instagram icon</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
         <p>Instagram</p>
       </div>
 
       <div class="social-facebook flex flex-row mt-6">
-        <svg role="img" xmlns="http://www.w3.org/2000/svg" class="w-6 mr-4 fill-current" viewBox="0 0 24 24"><title>Facebook icon</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <a href="https://www.facebook.com/OptikaCoolVisionVero3"><svg role="img" xmlns="http://www.w3.org/2000/svg" class="w-6 mr-4 fill-current hover:text-tertiary" viewBox="0 0 24 24"><title>Facebook icon</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
         <p>Facebook</p>
       </div>
       </div>
@@ -178,7 +217,23 @@
   
   </footer>
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <script>
+    var slider = tns({
+    container: '.my-slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: false,
+    controls: false,
+  });
 
+  window.sliderNext.addEventListener('click', () => {
+      slider.goTo('next');
+  })
 
+  window.sliderPrev.addEventListener('click', () => {
+      slider.goTo('prev');
+  })
+  </script>
 </body>
 </html>
