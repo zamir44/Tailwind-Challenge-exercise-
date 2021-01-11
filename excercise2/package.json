@@ -4,7 +4,7 @@
     "development": "cross-env NODE_ENV=development postcss public/tailwind.css -o public/build/tailwind.css",
     "production": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/build/tailwind.css",
     "start": "npm run serve",
-    "build": "tailwind build /public/css/tailwind.css -o /public/dist/main.css"
+    "build": "tailwind build ./public/css/tailwind.css -o ./public/dist/main.css"
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
