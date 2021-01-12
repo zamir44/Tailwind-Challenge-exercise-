@@ -24,7 +24,7 @@
 } 
 
 .border {
-   border: 1px solid #988787; 
+   /* border: 1px solid #988787;  */
 }
 
 button:after {
@@ -43,7 +43,7 @@ button:after {
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-    display: block;
+    display: none;
 }
 
 /* .buttons :nth-child(2) {
